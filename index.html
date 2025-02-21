@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keuangan Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Keuangan Saya</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('ringkasan')">Ringkasan</a></li>
+                <li><a href="#" onclick="showSection('pendapatan')">Pendapatan</a></li>
+                <li><a href="#" onclick="showSection('pengeluaran')">Pengeluaran</a></li>
+                <li><a href="#" onclick="showSection('tabungan')">Tabungan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Ringkasan -->
+    <section id="ringkasan" class="active">
+        <h2>Ringkasan Keuangan</h2>
+        <p>Total Pendapatan: <span id="totalPendapatan">0</span></p>
+        <p>Total Pengeluaran: <span id="totalPengeluaran">0</span></p>
+        <p>Saldo: <span id="saldo">0</span></p>
+        <p>Total Tabungan: <span id="totalTabungan">0</span></p>
+    </section>
+
+    <!-- Pendapatan -->
+    <section id="pendapatan" class="hidden">
+        <h2>Pendapatan Bulanan</h2>
+        <input type="text" id="pendapatanItem" placeholder="Sumber Pendapatan">
+        <input type="number" id="pendapatanJumlah" placeholder="Jumlah">
+        <button class="add-button" onclick="tambahPendapatan()">Tambah</button>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Sumber</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="listPendapatan"></tbody>
+        </table>
+    </section>
+
+    <!-- Pengeluaran -->
+    <section id="pengeluaran" class="hidden">
+        <h2>Pengeluaran Bulanan</h2>
+        <input type="text" id="pengeluaranItem" placeholder="Jenis Pengeluaran">
+        <input type="number" id="pengeluaranJumlah" placeholder="Jumlah">
+        <button class="add-button" onclick="tambahPengeluaran()">Tambah</button>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Jenis</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="listPengeluaran"></tbody>
+        </table>
+    </section>
+
+    <!-- Tabungan -->
+    <section id="tabungan" class="hidden">
+        <h2>Tabungan</h2>
+        <input type="text" id="tabunganItem" placeholder="Nama Tabungan">
+        <input type="number" id="tabunganJumlah" placeholder="Jumlah">
+        <button class="add-button" onclick="tambahTabungan()">Tambah</button>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="listTabungan"></tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
